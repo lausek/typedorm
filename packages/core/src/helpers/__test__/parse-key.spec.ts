@@ -45,4 +45,10 @@ describe('parseKey()', () => {
       '"id" was referenced in USER#{{id}} but it\'s value could not be resolved.'
     );
   });
+
+  it('should throw if no interpolation variable is inside the key pattern', () => {
+    expect(() => parseKey('justtext', {})).toThrowError(
+      'No interpolation variable in justtext.'
+    );
+  });
 });

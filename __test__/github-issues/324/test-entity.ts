@@ -5,8 +5,8 @@ import {testTable} from '../../__mocks__/test-table';
   table: testTable,
   name: 'user',
   primaryKey: {
-    partitionKey: 'pk',
-    sortKey: 'sk',
+    partitionKey: '{{pk}}',
+    sortKey: '{{sk}}',
   },
   indexes: {
     GSI1: {
