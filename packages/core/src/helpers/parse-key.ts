@@ -30,6 +30,10 @@ export function parseKey<Entity>(
     }
     return aliasValue;
   } else {
+    if (!key.match(regexExp.interpolation)) {
+      throw new Error(`No interpolation variable in ${key}`);
+    }
+
     return key.replace(regexExp.interpolation, substr => {
       const match = regexExp.interpolatedWord.exec(substr);
       let variable: any;

@@ -31,7 +31,7 @@ test('allows querying items with only partition key', async () => {
       '#KY_CE_PK': 'PK',
     },
     ExpressionAttributeValues: {
-      ':KY_CE_PK': 'pk',
+      ':KY_CE_PK': 'onlyPK',
     },
     KeyConditionExpression: '#KY_CE_PK = :KY_CE_PK',
     TableName: 'test-table',
@@ -59,7 +59,7 @@ test('allows querying items with PK and SK', async () => {
       '#KY_CE_SK': 'SK',
     },
     ExpressionAttributeValues: {
-      ':KY_CE_PK': 'pk',
+      ':KY_CE_PK': 'withPK',
       ':KY_CE_SK': 'withSK',
     },
     KeyConditionExpression:
